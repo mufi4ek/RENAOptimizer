@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<assembly manifestVersion="1.0" xmlns="urn:schemas-microsoft-com:asm.v1">
+  <assemblyIdentity version="1.0.0.0" name="RENAOptimizer.app"/>
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v2">
+    <security>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- Этот параметр заставляет программу запрашивать права Администратора при запуске -->
+        <requestedExecutionLevel level="requireAdministrator" uiAccess="false" />
+      </security>
+    </security>
+  </trustInfo>
+</assembly>
