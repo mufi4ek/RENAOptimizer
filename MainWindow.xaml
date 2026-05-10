@@ -33,7 +33,7 @@
             <!-- Основная часть -->
             <Grid Grid.Column="1" Margin="40">
                 <StackPanel>
-                    <TextBlock Text="System Status: UNOPTIMIZED" FontSize="14" Foreground="#888" FontWeight="Bold" LetterSpacing="2"/>
+                    <TextBlock Text="System Status: UNOPTIMIZED" FontSize="14" Foreground="#888" FontWeight="Bold" CharacterSpacing="200"/>
                     <TextBlock Text="Performance Dashboard" FontSize="32" Foreground="White" FontWeight="Bold" Margin="0,5,0,30"/>
 
                     <UniformGrid Columns="2" Margin="0,0,0,30">
