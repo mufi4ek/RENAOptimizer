@@ -12,7 +12,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Левая панель (Навигация) -->
+            <!-- Левая панель -->
             <Border Background="#0A0A0A" CornerRadius="20,0,0,20">
                 <StackPanel Margin="0,30,0,0">
                     <TextBlock Text="RENA" FontSize="36" FontWeight="ExtraBold" Foreground="#BB86FC" HorizontalAlignment="Center" Margin="0,0,0,50">
@@ -24,38 +24,44 @@
                     <Button Content="DASHBOARD" Style="{StaticResource NavButton}"/>
                     <Button Content="OPTIMIZER" Style="{StaticResource NavButton}"/>
                     <Button Content="CLEANER" Style="{StaticResource NavButton}"/>
-                    <Button Content="NETWORK" Style="{StaticResource NavButton}"/>
                     
-                    <Button Content="EXIT" Click="ExitApp" Margin="0,150,0,0" Foreground="#CF6679" Background="Transparent" BorderThickness="0" Cursor="Hand" FontWeight="Bold"/>
+                    <Button Content="EXIT" Click="ExitApp" Margin="0,200,0,0" Foreground="#CF6679" Background="Transparent" BorderThickness="0" Cursor="Hand" FontWeight="Bold"/>
                 </StackPanel>
             </Border>
 
             <!-- Основная часть -->
             <Grid Grid.Column="1" Margin="40">
                 <StackPanel>
-                    <TextBlock Text="System Status: UNOPTIMIZED" FontSize="14" Foreground="#888" FontWeight="Bold" CharacterSpacing="200"/>
-                    <TextBlock Text="Performance Dashboard" FontSize="32" Foreground="White" FontWeight="Bold" Margin="0,5,0,30"/>
+                    <TextBlock Text="SYSTEM STATUS" FontSize="12" Foreground="#555" FontWeight="Bold" Margin="0,0,0,5"/>
+                    <TextBlock Text="Performance Dashboard" FontSize="32" Foreground="White" FontWeight="Bold" Margin="0,0,0,30"/>
 
-                    <UniformGrid Columns="2" Margin="0,0,0,30">
-                        <!-- Карточка 1 -->
+                    <UniformGrid Columns="2" Margin="0,0,0=">
                         <Border Background="#111" Margin="5" CornerRadius="15" Padding="20" BorderBrush="#222" BorderThickness="1">
                             <StackPanel>
                                 <TextBlock Text="Quick Boost" FontSize="18" Foreground="White" FontWeight="Bold"/>
-                                <TextBlock Text="Apply essential tweaks for FPS" Foreground="#666" FontSize="12" Margin="0,5,0,15"/>
-                                <Button Content="RUN NOW" Background="#BB86FC" Foreground="Black" FontWeight="Bold" Height="35" Click="RunOptimize_Click" Cursor="Hand"/>
+                                <TextBlock Text="Essential gaming tweaks" Foreground="#666" FontSize="12" Margin="0,5,0,15"/>
+                                <Button Content="RUN NOW" Background="#BB86FC" Foreground="Black" FontWeight="Bold" Height="35" Click="RunOptimize_Click" Cursor="Hand">
+                                    <Button.Resources>
+                                        <Style TargetType="Border"><Setter Property="CornerRadius" Value="8"/></Style>
+                                    </Button.Resources>
+                                </Button>
                             </StackPanel>
                         </Border>
-                        <!-- Карточка 2 -->
+                        
                         <Border Background="#111" Margin="5" CornerRadius="15" Padding="20" BorderBrush="#222" BorderThickness="1">
                             <StackPanel>
                                 <TextBlock Text="Deep Clean" FontSize="18" Foreground="White" FontWeight="Bold"/>
-                                <TextBlock Text="Remove shaders and temp files" Foreground="#666" FontSize="12" Margin="0,5,0,15"/>
-                                <Button Content="CLEAN" Background="Transparent" BorderBrush="#BB86FC" BorderThickness="1" Foreground="#BB86FC" FontWeight="Bold" Height="35" Cursor="Hand"/>
+                                <TextBlock Text="Clear system junk" Foreground="#666" FontSize="12" Margin="0,5,0,15"/>
+                                <Button Content="CLEAN" Background="Transparent" BorderBrush="#BB86FC" BorderThickness="1" Foreground="#BB86FC" FontWeight="Bold" Height="35" Cursor="Hand">
+                                    <Button.Resources>
+                                        <Style TargetType="Border"><Setter Property="CornerRadius" Value="8"/></Style>
+                                    </Button.Resources>
+                                </Button>
                             </StackPanel>
                         </Border>
                     </UniformGrid>
 
-                    <TextBlock x:Name="StatusText" Text="System ready for optimization." Foreground="#BB86FC" HorizontalAlignment="Center" FontSize="14"/>
+                    <TextBlock x:Name="StatusText" Text="Ready to optimize." Foreground="#BB86FC" HorizontalAlignment="Center" Margin="0,30,0,0"/>
                 </StackPanel>
             </Grid>
         </Grid>
@@ -68,22 +74,15 @@
             <Setter Property="Height" Value="50"/>
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0,0,4,0">
+                        <Border Background="{TemplateBinding Background}" BorderThickness="0">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Foreground" Value="White"/>
-                    <Setter Property="Background" Value="#151515"/>
-                </Trigger>
-            </Style.Triggers>
         </Style>
     </Window.Resources>
 </Window>
